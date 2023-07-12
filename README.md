@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # ansible-users-configure
+=======
+# user-configure
+>>>>>>> 827691924dc4768a0a4c636a8912797fa7d7c5cd
 
 
 
@@ -15,14 +19,22 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
+<<<<<<< HEAD
 git remote add origin https://gitlab.local.newton-technology.ru/nwtn/integration/infrastracture/ansible-users-configure.git
+=======
+git remote add origin https://gitlab.com/anotmd-useful/ansible/user-configure.git
+>>>>>>> 827691924dc4768a0a4c636a8912797fa7d7c5cd
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
+<<<<<<< HEAD
 - [ ] [Set up project integrations](https://gitlab.local.newton-technology.ru/nwtn/integration/infrastracture/ansible-users-configure/-/settings/integrations)
+=======
+- [ ] [Set up project integrations](https://gitlab.com/anotmd-useful/ansible/user-configure/-/settings/integrations)
+>>>>>>> 827691924dc4768a0a4c636a8912797fa7d7c5cd
 
 ## Collaborate with your team
 
@@ -30,7 +42,11 @@ git push -uf origin main
 - [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 - [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
 - [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+<<<<<<< HEAD
 - [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+=======
+- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+>>>>>>> 827691924dc4768a0a4c636a8912797fa7d7c5cd
 
 ## Test and Deploy
 
