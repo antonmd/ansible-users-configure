@@ -1,0 +1,10 @@
+---
+names:
+  test:
+    ssh_key: ./keys/test.pub
+    sudo: 'false'
+    action: 'create'
+  test2:
+    ssh_key: ./keys/test2.pub
+    sudo: 'false'
+    action: 'create'

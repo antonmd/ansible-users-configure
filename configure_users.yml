@@ -1,0 +1,40 @@
+- name: Create Linux Users
+  hosts: all
+  become: true
+  tasks:
+    - name: Configure User
+      user:
+        name: "{{ item.key }}"
+        state: "{{ 'present' if item.value.action == 'create' else 'absent' }}"
+        force: true
+        shell: /bin/bash
+      loop: "{{ names | dict2items }}"
+
+    - name: Install SSH Key
+      authorized_key:
+        user: "{{ item.key }}"
+        key: "{{ lookup('file', item.value.ssh_key) }}"
+        state: 'present'
+      loop: "{{ names | dict2items }}"
+      when: item.value.action == 'create'
+
+    - name: Create /etc/sudoers.d/ansible_integration if it doesn't exist
+      file:
+        path: /etc/sudoers.d/ansible_integration
+        state: touch
+        mode: 0644
+      changed_when: False
+
+    - name: Configure Sudo Privileges
+      lineinfile:
+        dest: /etc/sudoers.d/ansible_integration
+        state: "{{ 'present' if (item.value.sudo == 'true' and item.value.action == 'create') else 'absent' }}"
+        line: "{{ item.key }} ALL=(ALL) NOPASSWD: ALL"
+      loop: "{{ names | dict2items }}"
+
+    - name: Remove home directory
+      file:
+        path: "/home/{{ item.key }}"
+        state: absent
+      loop: "{{ names | dict2items }}"
+      when: item.value.action == 'delete'
