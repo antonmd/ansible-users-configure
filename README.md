@@ -1,6 +1,6 @@
 ## Usage:
 
-Create a file named like your host group in the inventory file. In the file, create a list of users with parameters as in the example:
+Create a file in group_vars directroy named like your host group in the inventory file. In the file, create a list of users with parameters as in the example:
 
     names:
       test:    
